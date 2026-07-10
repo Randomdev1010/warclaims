@@ -1,0 +1,24 @@
+package dev.randomdev.warclaims.Classes.Networking.CustomPayloadHandlers;
+
+import dev.randomdev.warclaims.Classes.CustomSaveData.SavedTeams;
+import dev.randomdev.warclaims.Classes.Events;
+import dev.randomdev.warclaims.Classes.Networking.CustomPacketPayloads.SelectTeamPacket;
+import dev.randomdev.warclaims.Classes.Screens.TeamSelectionScreen;
+import net.minecraft.client.Minecraft;
+import net.neoforged.neoforge.network.handling.IPayloadContext;
+
+import static dev.randomdev.warclaims.Classes.Events.TEAMSDATA;
+
+public class SelectTeamHandler {
+
+    public static void handleDataOnClient(final SelectTeamPacket data, final IPayloadContext context) {
+        // Do something with the data, on the main thread
+        Minecraft.getInstance().setScreen(new TeamSelectionScreen("Choose Your Team"));
+    }
+    public static void handleDataOnServer(final SelectTeamPacket data, final IPayloadContext context) {
+        // Do something with the data, on the main thread
+        SavedTeams.SafeEditor edit = TEAMSDATA.editInfo();
+        edit.addToTeam(data.teamName(), context.player().getUUID());
+        edit.save();
+    }
+}

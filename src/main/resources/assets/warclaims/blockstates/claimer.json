@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "color=black,powered=true": {
+      "model": "warclaims:block/black_claimer"
+    },
+    "color=blue,powered=true": {
+      "model": "warclaims:block/blue_claimer"
+    },
+    "color=brown,powered=true": {
+      "model": "warclaims:block/brown_claimer"
+    },
+    "color=cyan,powered=true": {
+      "model": "warclaims:block/cyan_claimer"
+    },
+    "color=gray,powered=true": {
+      "model": "warclaims:block/gray_claimer"
+    },
+    "color=green,powered=true": {
+      "model": "warclaims:block/green_claimer"
+    },
+    "color=lightblue,powered=true": {
+      "model": "warclaims:block/light_blue_claimer"
+    },
+    "color=lightgray,powered=true": {
+      "model": "warclaims:block/light_grey_claimer"
+    },
+    "color=lime,powered=true": {
+      "model": "warclaims:block/lime_claimer"
+    },
+    "color=magenta,powered=true": {
+      "model": "warclaims:block/magenta_claimer"
+    },
+    "color=orange,powered=true": {
+      "model": "warclaims:block/orange_claimer"
+    },
+    "color=pink,powered=true": {
+      "model": "warclaims:block/pink_claimer"
+    },
+    "color=purple,powered=true": {
+      "model": "warclaims:block/purple_claimer"
+    },
+    "color=red,powered=true": {
+      "model": "warclaims:block/red_claimer"
+    },
+    "color=white,powered=true": {
+      "model": "warclaims:block/white_claimer"
+    },
+    "color=yellow,powered=true": {
+      "model": "warclaims:block/yellow_claimer"
+    },
+    "color=black,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=blue,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=brown,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=cyan,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=gray,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=green,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=lightblue,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=lightgray,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=lime,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=magenta,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=orange,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=pink,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=purple,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=red,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=white,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    },
+    "color=yellow,powered=false": {
+      "model": "warclaims:block/off_claimer"
+    }
+  }
+}
