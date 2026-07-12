@@ -1,0 +1,100 @@
+{
+  "variants": {
+    "color=black,powered=true": {
+      "model": "warclaims:block/black_capital"
+    },
+    "color=blue,powered=true": {
+      "model": "warclaims:block/blue_capital"
+    },
+    "color=brown,powered=true": {
+      "model": "warclaims:block/brown_capital"
+    },
+    "color=cyan,powered=true": {
+      "model": "warclaims:block/cyan_capital"
+    },
+    "color=gray,powered=true": {
+      "model": "warclaims:block/gray_capital"
+    },
+    "color=green,powered=true": {
+      "model": "warclaims:block/green_capital"
+    },
+    "color=lightblue,powered=true": {
+      "model": "warclaims:block/light_blue_capital"
+    },
+    "color=lightgray,powered=true": {
+      "model": "warclaims:block/light_grey_capital"
+    },
+    "color=lime,powered=true": {
+      "model": "warclaims:block/lime_capital"
+    },
+    "color=magenta,powered=true": {
+      "model": "warclaims:block/magenta_capital"
+    },
+    "color=orange,powered=true": {
+      "model": "warclaims:block/orange_capital"
+    },
+    "color=pink,powered=true": {
+      "model": "warclaims:block/pink_capital"
+    },
+    "color=purple,powered=true": {
+      "model": "warclaims:block/purple_capital"
+    },
+    "color=red,powered=true": {
+      "model": "warclaims:block/red_capital"
+    },
+    "color=white,powered=true": {
+      "model": "warclaims:block/white_capital"
+    },
+    "color=yellow,powered=true": {
+      "model": "warclaims:block/yellow_capital"
+    },
+    "color=black,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=blue,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=brown,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=cyan,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=gray,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=green,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=lightblue,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=lightgray,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=lime,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=magenta,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=orange,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=pink,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=purple,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=red,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=white,powered=false": {
+      "model": "warclaims:block/off_capital"
+    },
+    "color=yellow,powered=false": {
+      "model": "warclaims:block/off_capital"
+    }
+  }
+}

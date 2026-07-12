@@ -1,9 +1,6 @@
 package dev.randomdev.warclaims.customTypes;
 
 import net.minecraft.nbt.CompoundTag;
-import net.minecraft.nbt.ListTag;
-import net.minecraft.world.item.Items;
-import net.minecraft.world.scores.Team;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -36,6 +33,9 @@ public class ClaimTeams {
 
     public ArrayList<UUID> getTeam(String name){
         return this.teams.get(name);
+    }
+    public ArrayList<UUID> setTeam(String name,ArrayList<UUID> list){
+        return this.teams.replace(name,list);
     }
 
     public HashMap<String, ArrayList<UUID>> getTeams(){

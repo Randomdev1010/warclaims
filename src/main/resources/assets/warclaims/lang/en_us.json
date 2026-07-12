@@ -1,5 +1,7 @@
 {
-  "itemGroup.warclaims": "Example Mod Tab",
+  "itemGroup.warclaims.main_tab": "War Claims",
   "block.warclaims.claimer": "Claimer",
-  "item.warclaims.claimer": "Claimer"
+  "item.warclaims.claimer": "Claimer",
+  "block.warclaims.capital": "Capital",
+  "item.warclaims.capital": "Capital"
 }

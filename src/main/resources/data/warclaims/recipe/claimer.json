@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "LOL",
+    "ODO",
+    "LOL"
+  ],
+  "key": {
+    "L": {
+      "item": "minecraft:redstone_lamp"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "warclaims:claimer"
+  }
+}

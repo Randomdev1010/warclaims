@@ -15,6 +15,10 @@ public class Items {
             "claimer",
             ()->new BlockItem(Blocks.CLAIMER.get(), new Item.Properties())
     );
+    public static final DeferredItem<BlockItem> CAPITAL = ITEMS.register(
+            "capital",
+            ()->new BlockItem(Blocks.CAPITAL.get(), new Item.Properties())
+    );
 
     public static void register(){
     }
