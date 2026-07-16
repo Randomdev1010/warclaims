@@ -51,6 +51,7 @@ public class Events {
                    String team = StringArgumentType.getString(Command,"Team");
                    Player player = EntityArgument.getPlayer(Command,"Player");
 
+                   if(TEAMSDATA==null){return 0;}
                    SavedTeams.SafeEditor editor = TEAMSDATA.editInfo();
 
                    editor.addToTeam(team,player.getUUID());
@@ -64,6 +65,7 @@ public class Events {
                     String team = StringArgumentType.getString(Command,"Team");
                     Player player = EntityArgument.getPlayer(Command,"Player");
 
+                    if(TEAMSDATA==null){return 0;}
                     SavedTeams.SafeEditor editor = TEAMSDATA.editInfo();
 
                     ArrayList<UUID> list = editor.getTeam(team);
@@ -80,6 +82,7 @@ public class Events {
                     Commands.literal("replacePlayer").then(Commands.argument("Player", EntityArgument.player()).then(Commands.argument("Team", StringArgumentType.string()).executes(Command->{
                         Player player = EntityArgument.getPlayer(Command,"Player");
 
+                        if(TEAMSDATA==null){return 0;}
                         SavedTeams.SafeEditor editor = TEAMSDATA.editInfo();
                         String team = editor.getTeamName(player.getUUID());
                         if (team == null){return 0;}
@@ -102,6 +105,7 @@ public class Events {
                 Commands.literal("clearPlayer").then(Commands.argument("Player", EntityArgument.player()).executes(Command->{
                     Player player = EntityArgument.getPlayer(Command,"Player");
 
+                    if(TEAMSDATA==null){return 0;}
                     SavedTeams.SafeEditor editor = TEAMSDATA.editInfo();
                     String team = editor.getTeamName(player.getUUID());
                     if (team == null){return 0;}
@@ -123,6 +127,7 @@ public class Events {
                 Commands.literal("clearTeam").then(Commands.argument("Team", StringArgumentType.string()).executes(Command->{
                     String team = StringArgumentType.getString(Command,"Team");
 
+                    if(TEAMSDATA==null){return 0;}
                     SavedTeams.SafeEditor editor = TEAMSDATA.editInfo();
 
                     editor.setTeam(team,new ArrayList<>());
@@ -133,6 +138,7 @@ public class Events {
             )
             .then(
                 Commands.literal("clear").executes(Command->{
+                    if(TEAMSDATA==null){return 0;}
                     SavedTeams.SafeEditor editor = TEAMSDATA.editInfo();
 
                     editor.getTeams().forEach((String name,ArrayList<UUID> list)->{
@@ -179,6 +185,7 @@ public class Events {
         Player player = event.getEntity();
         UUID id = player.getUUID();
 
+        if(TEAMSDATA==null){return;}
         SavedTeams.SafeEditor editor = TEAMSDATA.editInfo();
         if(!editor.hasInAnyTeam(id)){
             PacketDistributor.sendToPlayer((ServerPlayer) player, new SelectTeamPacket(""));
@@ -188,6 +195,7 @@ public class Events {
     public void onBlockBreak(BlockEvent.BreakEvent event){
         BlockPos pos = event.getPos();
         Level level = (Level) event.getLevel();
+        if(TEAMSDATA==null){return;}
         SavedTeams.SafeEditor editor = TEAMSDATA.editInfo();
         String teamName = editor.getTeamName(event.getPlayer().getUUID());
         LevelChunk chunk = level.getChunkAt(pos);
@@ -207,6 +215,7 @@ public class Events {
     }
     @SubscribeEvent
     public void onMobKill(LivingDropsEvent event){
+        if(TEAMSDATA==null){return;}
         Entity entity = event.getEntity();
         Level level = entity.level();
         LevelChunk chunk = level.getChunkAt(entity.getOnPos());
@@ -229,6 +238,7 @@ public class Events {
     }
     @SubscribeEvent
     public void onBlockDrop(BlockDropsEvent event){
+        if(TEAMSDATA==null){return;}
         LevelChunk chunk = event.getLevel().getChunkAt(event.getPos());
         Level level = event.getLevel();
         Block block = event.getState().getBlock();
@@ -266,6 +276,7 @@ public class Events {
 
     @SubscribeEvent
     public void mobDamaged(LivingIncomingDamageEvent event){
+        if(TEAMSDATA==null){return;}
         Entity entity = event.getEntity();
         Level level = entity.level();
         LevelChunk chunk = level.getChunkAt(entity.getOnPos());

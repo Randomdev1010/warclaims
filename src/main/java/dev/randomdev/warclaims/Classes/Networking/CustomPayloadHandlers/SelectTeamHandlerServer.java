@@ -11,6 +11,7 @@ import static dev.randomdev.warclaims.Classes.Events.TEAMSDATA;
 public class SelectTeamHandlerServer {
     public static void handleDataOnServer(final SelectTeamPacket data, final IPayloadContext context) {
         // Do something with the data, on the main thread
+        if(TEAMSDATA==null){return;}
         SavedTeams.SafeEditor edit = TEAMSDATA.editInfo();
         if (edit.getTeam(data.teamName()).isEmpty()) {
             context.player().addItem(new ItemStack(Items.CAPITAL::get));

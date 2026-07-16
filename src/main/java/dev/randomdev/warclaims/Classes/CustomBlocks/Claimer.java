@@ -74,6 +74,7 @@ public class Claimer extends Block implements EntityBlock {
 
     @Override
     public @Nullable BlockState getStateForPlacement(BlockPlaceContext context) {
+        if(TEAMSDATA==null){return super.getStateForPlacement(context);}
         SavedTeams.SafeEditor edit = TEAMSDATA.editInfo();
         if (ColorsEnum.getFromName(edit.getTeamName(context.getPlayer().getUUID())) == null){
             return super.getStateForPlacement(context);
