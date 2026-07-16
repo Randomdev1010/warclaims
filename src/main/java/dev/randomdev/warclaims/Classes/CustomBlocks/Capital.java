@@ -33,15 +33,6 @@ public class Capital extends Claimer{
             chunk.setData(DataAttachments.IS_CAPITAL,true);
         }
     }
-    @Override
-    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player, BlockHitResult hitResult) {
-        if(state.getValue(POWERED)){
-            turnOff(state,level,pos);
-        }else{
-            turnOn(state,level,pos);
-        }
-        return InteractionResult.SUCCESS;
-    }
 
     @Override
     public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
