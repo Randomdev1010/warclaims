@@ -30,6 +30,7 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.living.*;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -187,17 +188,21 @@ public class Events {
     public void onBlockBreak(BlockEvent.BreakEvent event){
         BlockPos pos = event.getPos();
         Level level = (Level) event.getLevel();
-
+        SavedTeams.SafeEditor editor = TEAMSDATA.editInfo();
+        String teamName = editor.getTeamName(event.getPlayer().getUUID());
         LevelChunk chunk = level.getChunkAt(pos);
+
+        boolean isNotChunkOwner = !chunk.getData(DataAttachments.CHUNK_OWNER).equals(teamName) && !chunk.getData(DataAttachments.CHUNK_OWNER).isEmpty();
+        if(isNotChunkOwner && level.getBlockState(pos).getBlock()==Blocks.CAPITAL.get()){
+            event.setCanceled(true);
+        }
+        if(isNotChunkOwner && !Config.CAN_BREAK_ON_ENEMY.get()){
+            event.setCanceled(true);
+        }
+
         if (chunk.getData(DataAttachments.OWNER_POS).equals(pos)){
             chunk.setData(DataAttachments.CHUNK_OWNER,"");
             chunk.setData(DataAttachments.OWNER_POS,new BlockPos(0,0,0));
-        }
-
-        SavedTeams.SafeEditor editor = TEAMSDATA.editInfo();
-        String teamName = editor.getTeamName(event.getPlayer().getUUID());
-        if(!chunk.getData(DataAttachments.CHUNK_OWNER).equals(teamName) && !chunk.getData(DataAttachments.CHUNK_OWNER).isEmpty() && !Config.CAN_BREAK_ON_ENEMY.get()){
-            event.setCanceled(true);
         }
     }
     @SubscribeEvent
