@@ -30,7 +30,6 @@ import net.neoforged.neoforge.energy.IEnergyStorage;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import net.neoforged.neoforge.event.entity.living.*;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
-import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
@@ -245,6 +244,7 @@ public class Events {
         RecipeManager manager = level.getRecipeManager();
         SavedTeams.SafeEditor editor = TEAMSDATA.editInfo();
         if (event.getBreaker()==null){return; }
+        if (event.getDrops().isEmpty()){return; }
         String teamName = editor.getTeamName(event.getBreaker().getUUID());
 
         System.out.println(teamName);
